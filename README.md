@@ -1,4 +1,4 @@
-# 4JAleatorizador 自述文件
+# 4JTools 自述文件
 ### [English](#EN) [Espanol](#ES)
 
 [查看更新日志](changelog.md)
@@ -17,7 +17,7 @@ By [是一刀斩哒](https://space.bilibili.com/485832788)
 
 ------
 
-# <span id="EN">4JAleatorizador Readme File (English)</span>
+# <span id="EN">4JTools Readme File (English)</span>
 
 [View change log](changelog.md)
 
@@ -35,7 +35,7 @@ I don't know how to program. This tool is written with Windows batch file, and l
 
 ------
 
-# <span id="ES">archivo Léame de 4JAleatorizador (Espanol)</span>
+# <span id="ES">archivo Léame de 4JTools (Espanol)</span>
 
 [Actualizacion del registro](changelog.md)
 
