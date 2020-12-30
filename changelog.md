@@ -15,10 +15,13 @@ V3.0
 V3.1
 
 - El nombre se cambia de 4JAleatorizador a 4JTools.
-
 - Anadido un nivel "final", que mostrara el nombre de cada nivel.
-
 - Anadido una barra de progreso.
+
+V3.5
+
+- Se agrego un menu principal e integro todas las funciones en un solo archivo por lotes.
+- Anadida herramienta de paquete de texturas y niveles exportacion(WIP).
 
 ------
 
@@ -36,6 +39,12 @@ V3.1
 - Added an "end" level, which will display the name of each level.
 - Added a progress bar.
 
+
+V3.5
+
+- Added a main menu and integrated all functions into a single batch file.
+- Added texture pack  tool and level exporter(WIP).
+
 ------
 
 #### <span id="CN">CN</span>
@@ -49,8 +58,11 @@ V3.0
 V3.1
 
 - 名字由4JAleatorizador改为4JTools。
-
 - 添加了一个“结尾”关卡，会展示每关的名字。
-
 - 添加了进度条。
+
+V3.5
+
+- 添加了一个主菜单，并把所有功能整合进一个批处理文件。
+- 增加了材质包工具和关卡工具（WIP）。
 

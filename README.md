@@ -3,15 +3,15 @@
 
 [查看更新日志](changelog.md)
 
-4JAleatorizador是给Super Mario 4 Jugadores制作的一款小工具，可以生成一个随机的世界，其中包含16个从[SM4J Altervista（官方网站）](https://carlosxdjavgames.altervista.org/wp-content/niveles.php)下载的16个随机关卡。
+4JTools是给Super Mario 4 Jugadores制作的一款小工具。
 
-我不会编程，本工具是使用Windows批处理编写而成，下载关卡是通过wget for windows实现的。
+世界随机器可以生成一个随机的世界，其中包含16个从[SM4J Altervista（官方网站）](https://carlosxdjavgames.altervista.org/wp-content/niveles.php)下载的16个随机关卡。
 
-### 特性一览
-* 随机的马里奥世界，关卡来自SM4J Altervista！
-* 有3个世界主题（地面、沙漠、冰原），是随机的！
-* 从17首适合世界地图的音乐中随机选择地图音乐。
-* 通过运行UpdateLevelMaxNumber.bat，可以在线更新关卡数量最大值，从而玩到新的关卡。
+材质包工具可以将1.9的材质包转换为2.0的材质包。
+
+我不会编程，本工具是使用Windows批处理编写而成，下载关卡通过wget for windows实现，解压文件通过7-zip实现。
+
+多语言版本使用谷歌翻译翻译而成。
 
 By [是一刀斩哒](https://space.bilibili.com/485832788)
 
@@ -21,15 +21,15 @@ By [是一刀斩哒](https://space.bilibili.com/485832788)
 
 [View change log](changelog.md)
 
-4JAleatorizador is a small tool made for Super Mario 4 Jugadores. It can generate a random world, which contains 16 levels from [SM4J Altervista （official website）](https://carlosxdjavgames.altervista.org/wp-content/niveles.php).
+4JTools is a small tool made for Super Mario 4 Jugadores.
 
-I don't know how to program. This tool is written with Windows batch file, and level downloading is using wget for windows.
+The world randomizer can generate a random world, which contains 16 random levels downloaded from [SM4J Altervista (official website)](https://carlosxdjavgames.altervista.org/wp-content/niveles.php).
 
-### Features
-* Random Mario world with levels from SM4J Altervista!
-* There are 3 world themes (ground, desert, ice), which are random!
-* Randomly select map music from 17 musics suitable for use as world map music.
-* The maximum number of levels can be updated online by running UpdateLevelMaxNumber.bat.
+The texture pack tool can convert a 1.9 texture pack into a 2.0 texture pack.
+
+I don't know how to program. This tool is written using Windows batchfile. The download level is realized by wget for windows, and the unzipped file is realized by 7-zip.
+
+Multi-language version uses Google Translation made.
 
  By [Yidaozhan_Ya](https://space.bilibili.com/485832788)
 
@@ -39,14 +39,14 @@ I don't know how to program. This tool is written with Windows batch file, and l
 
 [Actualizacion del registro](changelog.md)
 
-4JAleatorizador es una pequeña herramienta hecha para Super Mario 4 Jugadores.  Puede generar un mundo aleatorio, que contiene 16 niveles de [SM4J Altervista（oficial）](https://carlosxdjavgames.altervista.org/wp-content/niveles.php) .
+4JTools es una pequeña herramienta hecha para Super Mario 4 Jugadores.
 
-No sé programar.  Esta herramienta está escrita con un archivo por lotes de Windows, y la descarga de nivel está usando wget para Windows.
+El aleatorizador mundial puede generar un mundo aleatorio, que contiene 16 niveles aleatorios descargados de [SM4J Altervista (sitio web oficial)](https://carlosxdjavgames.altervista.org/wp-content/niveles.php).
 
-### Caracteristicas
-* ¡Mundo aleatorio de Mario con niveles de SM4J Altervista!
-* Hay 3 temas mundiales (tierra, desierto, nevada), ¡que son aleatorios!
-* Seleccione aleatoriamente música de mapa de 17 músicas adecuadas para usar como música de mapa mundial.
-* El número máximo de niveles se puede actualizar en línea ejecutando UpdateLevelMaxNumber.bat.
+La herramienta de paquete de textura puede convertir un paquete de textura 1.9 en un paquete de textura 2.0.
+
+No se programar. Esta herramienta está escrita usando Windows batchfile. El nivel de descarga lo realiza wget para Windows, y el archivo descomprimido lo realiza 7-zip.
+
+La version multilingue se convierten utilizando Google Traductor.
 
 Por [Yidaozhan_Ya](https://space.bilibili.com/485832788)
