@@ -21,7 +21,12 @@ V3.1
 V3.5
 
 - Se agrego un menu principal e integro todas las funciones en un solo archivo por lotes.
-- Anadida herramienta de paquete de texturas y niveles exportacion(WIP).
+- Anadido herramienta de paquete de texturas y niveles exportacion(WIP).
+
+V3.6
+
+- Anadido verificacion automatica de actualizaciones.
+- Anadido descargador de niveles de eventos.
 
 ------
 
@@ -43,7 +48,12 @@ V3.1
 V3.5
 
 - Added a main menu and integrated all functions into a single batch file.
-- Added texture pack  tool and level exporter(WIP).
+- Added texture pack tool and level exporter(WIP).
+
+V3.6
+
+-Added automatic checking for updates.
+-Added event levels downloader.
 
 ------
 
@@ -66,3 +76,7 @@ V3.5
 - 添加了一个主菜单，并把所有功能整合进一个批处理文件。
 - 增加了材质包工具和关卡工具（WIP）。
 
+V3.6
+
+- 添加了自动检查更新的功能。
+- 添加了下载活动关卡的功能。
