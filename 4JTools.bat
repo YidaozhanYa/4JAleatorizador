@@ -5,7 +5,7 @@
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
 ::Yhs/ulQjdF+5
-::cxAkpRVqdFKZSDk=
+::cxAkpRVqdFKZSjk=
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSDk=
 ::eBoioBt6dFKZSDk=
@@ -14,9 +14,9 @@
 ::dAsiuh18IRvcCxnZtBJQ
 ::cRYluBh/LU+EWAnk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZkoaHErSXA==
-::ZQ05rAF9IBncCkqN+0xwdVsHAlXMbCXqZg==
-::ZQ05rAF9IAHYFVzEqQJkAi9bQwiRXA==
+::cxY6rQJ7JhzQF1fEqQJjZk0aHErSXA==
+::ZQ05rAF9IBncCkqN+0xwdVsHAlLMbCXqZg==
+::ZQ05rAF9IAHYFVzEqQJkAi9bQwiRaj/a
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDFCoCGS1CqZ8
 ::cRolqwZ3JBvQF1fEqQJQ
@@ -26,7 +26,7 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCmDJHSF5ks/aDxVQQG+aEGbCrAd/Ofp5vCGpkIPaLYVTIDU1qfAJfgWig==
+::Zh4grVQjdCmDJHSF5ks/aDxVQQG+aEGFMroT5PvH7eOJnhk3YO0wdJyNjvqLOOVz
 ::YB416Ek+ZG8=
 ::
 ::
@@ -38,7 +38,7 @@ cd "%~dp0"
 pushd "%cd%"
 
 set genmsg05=HTTPS://GITHUB.COM/YIDAOZHANYA/4JTOOLS
-set msgver=V3.6
+set msgver=V3.7
 :lang
 chcp 936>nul 2>nul||goto lang2
 set cols=50
@@ -85,6 +85,7 @@ set msg211=   4.[地图导入/导出]
 set msg212=   给新手准备的工具。
 set msg213=   5.[在线更新随机器]
 set msg214=   更新世界随机器的关卡最大值数据。
+set msg215=，游戏版本：
 set msgline=  ----------------------------------------------
 set msgerr=   输入错误，请重新输入。
 set msgf0= - 主菜单
@@ -174,6 +175,7 @@ set msg211=   4.[Level importer / exporter]
 set msg212=   Tools for novices.
 set msg213=   5.[Update randomizer online]
 set msg214=   Update the maximum level number of the World Randomizer.
+set msg215=，Game Version: 
 set msgline=  ----------------------------------------------
 set msgerr=   Error! please enter again.
 set msgf0= - Main Menu
@@ -263,6 +265,7 @@ set msg211=   4.[Nivel importador / exportador]
 set msg212=   Herramienta para principiantes.
 set msg213=   5.[Actualizar el aleatorizador en línea]
 set msg214=   Actualiza el numero de nivel maximo del World Randomizer.
+set msg215=，Version del juego: 
 set msgline=  ----------------------------------------------
 set msgerr=   Error! por favor ingrese de nuevo.
 set msgf0= - Menu principal
@@ -338,6 +341,8 @@ goto mainmenu2
 :lss10
 if %datec3% geq -31 (goto checkupd)
 :mainmenu2
+set SM4JDirName=Super_Mario_4_Jugadores& set gameversion=2.0.3
+if exist "%UserProfile%\AppData\Roaming\SM4JLegacy" set SM4JDirName=SM4JLegacy& set gameversion=2.0.4
 mode con cols=%cols% lines=%lines2%
 cls
 echo.&echo.%msg01%%msgf0%%msg016%
@@ -346,7 +351,7 @@ echo.%msg202%&echo.%msg203%&echo.%msg204%&echo.%msg205%&echo.%msg207%&echo.%msg2
 echo.&echo.%msg210%
 echo.%msgline%&echo.%msg209%
 echo.&echo.%msg02%
-echo.                     %msgver%
+echo.            %msgver%%msg215%%gameversion%
 set /p choice=
 cls
 if /i "%choice%"=="1" goto randomizer
@@ -2980,7 +2985,7 @@ md %mundoname%
 move "%~dp0mundo\*" "%~dp0%mundoname%" >nul
 move "%~dp0%mundoname%.wrl" "%~dp0%mundoname%" >nul
 move "%~dp0theend.lvl" "%~dp0%mundoname%" >nul
-xcopy /i /s /-y "%~dp0%mundoname%" "%AppData%\Super_Mario_4_Jugadores\Mundos\%mundoname%"
+xcopy /i /s /-y "%~dp0%mundoname%" "%AppData%\%SM4JDirName%\Mundos\%mundoname%"
 rd /s /q "%mundoname%"
 rd /s /q mundo
 cls
@@ -3168,12 +3173,12 @@ exit
 :levelmgr
 cls
 title %msgtitle%%msgf5%
-if exist "%UserProfile%\AppData\Roaming\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\AppData\Roaming\Super_Mario_4_Jugadores\Niveles"& goto mainr
-if exist "%UserProfile%\Application Data\Roaming\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\Application Data\Roaming\Super_Mario_4_Jugadores\Niveles"& goto mainr
-if exist "%UserProfile%\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\Super_Mario_4_Jugadores\Niveles"& goto mainr
-if exist "%UserProfile%\AppData\Local\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\AppData\Local\Super_Mario_4_Jugadores\Niveles"& goto mainr
-if exist "%UserProfile%\Application Data\Local\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\Application Data\Local\Super_Mario_4_Jugadores\Niveles"& goto mainr
-if exist "%UserProfile%\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\Super_Mario_4_Jugadores\Niveles"& goto mainr
+if exist "%UserProfile%\AppData\Roaming\%SM4JDirName%" set mapdi1="%UserProfile%\AppData\Roaming\%SM4JDirName%\Niveles"& goto mainr
+if exist "%UserProfile%\Application Data\Roaming\%SM4JDirName%" set mapdi1="%UserProfile%\Application Data\Roaming\%SM4JDirName%\Niveles"& goto mainr
+if exist "%UserProfile%\%SM4JDirName%" set mapdi1="%UserProfile%\%SM4JDirName%\Niveles"& goto mainr
+if exist "%UserProfile%\AppData\Local\%SM4JDirName%" set mapdi1="%UserProfile%\AppData\Local\%SM4JDirName%\Niveles"& goto mainr
+if exist "%UserProfile%\Application Data\Local\%SM4JDirName%" set mapdi1="%UserProfile%\Application Data\Local\%SM4JDirName%\Niveles"& goto mainr
+if exist "%UserProfile%\%SM4JDirName%" set mapdi1="%UserProfile%\%SM4JDirName%\Niveles"& goto mainr
 :mainr
 set /a cols2=cols+6
 mode con cols=%cols2% lines=%lines%
@@ -3241,12 +3246,12 @@ set /a cols2=cols+6
 mode con cols=%cols2% lines=%lines%
 rd /s /q "%~dp0txtr_workingdir"
 del /s /q "%~dp0txtr_workingdir\*"
-if exist "%UserProfile%\AppData\Roaming\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\AppData\Roaming\Super_Mario_4_Jugadores\Niveles"& goto maint
-if exist "%UserProfile%\Application Data\Roaming\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\Application Data\Roaming\Super_Mario_4_Jugadores\Niveles"& goto maint
-if exist "%UserProfile%\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\Super_Mario_4_Jugadores\Niveles"& goto maint
-if exist "%UserProfile%\AppData\Local\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\AppData\Local\Super_Mario_4_Jugadores\Niveles"& goto maint
-if exist "%UserProfile%\Application Data\Local\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\Application Data\Local\Super_Mario_4_Jugadores\Niveles"& goto maint
-if exist "%UserProfile%\Super_Mario_4_Jugadores" set mapdi1="%UserProfile%\Super_Mario_4_Jugadores\Niveles"& goto maint
+if exist "%UserProfile%\AppData\Roaming\%SM4JDirName%" set mapdi1="%UserProfile%\AppData\Roaming\%SM4JDirName%\Niveles"& goto maint
+if exist "%UserProfile%\Application Data\Roaming\%SM4JDirName%" set mapdi1="%UserProfile%\Application Data\Roaming\%SM4JDirName%\Niveles"& goto maint
+if exist "%UserProfile%\%SM4JDirName%" set mapdi1="%UserProfile%\%SM4JDirName%\Niveles"& goto maint
+if exist "%UserProfile%\AppData\Local\%SM4JDirName%" set mapdi1="%UserProfile%\AppData\Local\%SM4JDirName%\Niveles"& goto maint
+if exist "%UserProfile%\Application Data\Local\%SM4JDirName%" set mapdi1="%UserProfile%\Application Data\Local\%SM4JDirName%\Niveles"& goto maint
+if exist "%UserProfile%\%SM4JDirName%" set mapdi1="%UserProfile%\%SM4JDirName%\Niveles"& goto maint
 :maint
 cls
 echo.&echo.%msg015%%msgf2%%msg016%
@@ -3566,12 +3571,12 @@ ren "%~dp0evl\*" tmp.zip
 del "%~dp0evl\*.zip"
 cd evl
 cls
-if exist "%UserProfile%\AppData\Roaming\Super_Mario_4_Jugadores" set mapdi1=%UserProfile%\AppData\Roaming\Super_Mario_4_Jugadores& goto mainev
-if exist "%UserProfile%\Application Data\Roaming\Super_Mario_4_Jugadores" set mapdi1=%UserProfile%\Application Data\Roaming\Super_Mario_4_Jugadores& goto mainev
-if exist "%UserProfile%\Super_Mario_4_Jugadores" set mapdi1=%UserProfile%\Super_Mario_4_Jugadores& goto mainev
-if exist "%UserProfile%\AppData\Local\Super_Mario_4_Jugadores" set mapdi1=%UserProfile%\AppData\Local\Super_Mario_4_Jugadores& goto mainev
-if exist "%UserProfile%\Application Data\Local\Super_Mario_4_Jugadores" set mapdi1=%UserProfile%\Application Data\Local\Super_Mario_4_Jugadores& goto mainev
-if exist "%UserProfile%\Super_Mario_4_Jugadores" set mapdi1=%UserProfile%\Super_Mario_4_Jugadores& goto mainev
+if exist "%UserProfile%\AppData\Roaming\%SM4JDirName%" set mapdi1=%UserProfile%\AppData\Roaming\%SM4JDirName%& goto mainev
+if exist "%UserProfile%\Application Data\Roaming\%SM4JDirName%" set mapdi1=%UserProfile%\Application Data\Roaming\%SM4JDirName%& goto mainev
+if exist "%UserProfile%\%SM4JDirName%" set mapdi1=%UserProfile%\%SM4JDirName%& goto mainev
+if exist "%UserProfile%\AppData\Local\%SM4JDirName%" set mapdi1=%UserProfile%\AppData\Local\%SM4JDirName%& goto mainev
+if exist "%UserProfile%\Application Data\Local\%SM4JDirName%" set mapdi1=%UserProfile%\Application Data\Local\%SM4JDirName%& goto mainev
+if exist "%UserProfile%\%SM4JDirName%" set mapdi1=%UserProfile%\%SM4JDirName%& goto mainev
 :mainev
 if exist music_1.ogg (echo.%msg015%%msgf4%%msg016%&echo.%msg02%&echo.&echo.%evmsg03%&echo.%evmsg04%&echo.%evmsg05% & pause>nul)
 move *.lvl "%mapdi1%\Niveles"

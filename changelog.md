@@ -28,6 +28,10 @@ V3.6
 - Anadido verificacion automatica de actualizaciones.
 - Anadido descargador de niveles de eventos.
 
+V3.7
+
+- Se agrego soporte para la version 2.0.4.
+
 ------
 
 #### <span id="EN">EN</span>
@@ -52,8 +56,12 @@ V3.5
 
 V3.6
 
--Added automatic checking for updates.
--Added event levels downloader.
+- Added automatic checking for updates.
+- Added event levels downloader.
+
+V3.7
+
+- Added support for version 2.0.4.
 
 ------
 
@@ -80,3 +88,7 @@ V3.6
 
 - 添加了自动检查更新的功能。
 - 添加了下载活动关卡的功能。
+
+V3.7
+
+- 适配了2.0.4。
