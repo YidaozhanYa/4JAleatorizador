@@ -5,7 +5,7 @@ cd "%~dp0"
 pushd "%cd%"
 
 set genmsg05=HTTPS://GITHUB.COM/YIDAOZHANYA/4JTOOLS
-set msgver=V3.7
+set msgver=V3.8
 :lang
 chcp 936>nul 2>nul||goto lang2
 set cols=50
