@@ -9,7 +9,7 @@
 
 材质包工具可以将1.9的材质包转换为2.0的材质包。
 
-还可以在里面下载所有的活动关卡，更多功能敬请期待！
+还可以在里面下载所有的活动关卡，以及把材质包转换为皮肤。更多功能敬请期待！
 
 我不会编程，本工具是使用Windows批处理编写而成，下载关卡通过wget for windows实现，解压文件通过7-zip实现。
 
@@ -31,7 +31,7 @@ The world randomizer can generate a random world, which contains 16 random level
 
 The texture pack tool can convert a 1.9 texture pack into a 2.0 texture pack.
 
-You can also download all the event levels in it, so stay tuned for more features!
+You can also download all event levels in it and convert texture packs into skins. Stay tuned for more features!
 
 I don't know how to program. This tool is written using Windows batchfile. The download level is realized by wget for windows, and the unzipped file is realized by 7-zip.
 
@@ -53,7 +53,7 @@ El aleatorizador mundial puede generar un mundo aleatorio, que contiene 16 nivel
 
 La herramienta de paquete de textura puede convertir un paquete de textura 1.9 en un paquete de textura 2.0.
 
-También puedes descargar todos los niveles de eventos en él, ¡así que estad atentos para más funciones!
+Tambien puede descargar todos los niveles de eventos y convertir paquetes de texturas en mascaras. Esten atentos para mas funciones!
 
 No se programar. Esta herramienta está escrita usando Windows batchfile. El nivel de descarga lo realiza wget para Windows, y el archivo descomprimido lo realiza 7-zip.
 

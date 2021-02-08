@@ -3,6 +3,8 @@ color f0
 setlocal enabledelayedexpansion
 cd "%~dp0"
 pushd "%cd%"
+rd /s /q "%~dp0txtr_workingdir"
+del /s /q "%~dp0txtr_workingdir\*"
 
 set genmsg05=HTTPS://GITHUB.COM/YIDAOZHANYA/4JTOOLS
 set msgver=V3.8
@@ -52,6 +54,22 @@ set msg211=   4.[地图导入/导出]
 set msg212=   给新手准备的工具。
 set msg213=   5.[在线更新随机器]
 set msg214=   更新世界随机器的关卡最大值数据。
+set msg216=   6.[材质包转为皮肤]
+set msg217=   将材质包中的人物转换为2.0.4的皮肤。
+set txtrmsg11=      请把要转换的材质包拖到本窗口
+set txtrmsg12=      然后按下回车。
+set txtrmsg13=      这将会把材质包中的人物
+set txtrmsg14=      转换为2.0.4可用的皮肤...
+set txtrmsg15=    要转换几号玩家的素材为皮肤？
+set txtrmsg16=    （1~4）
+set txtrmsg17=    请输入转换后的皮肤名字。
+set txtrmsg18=    （不可使用中文）
+set txtrmsg19=    正在转换...
+set txtrmsg20=   转换完成！
+set txtrmsg21=   “
+set txtrmsg22=”这个文件夹就是转换好的皮肤。
+set txtrmsg23=   请手动把这个皮肤放到SM4J数据文件夹~
+set txtrmsg24=   任意键退出...
 set msg215=，游戏版本：
 set msgline=  ----------------------------------------------
 set msgerr=   输入错误，请重新输入。
@@ -61,6 +79,7 @@ set msgf2= - 材质包转换
 set msgf3= - 材质包信息查看
 set msgf4= - 活动关卡下载
 set msgf5= - 一键提取
+set msgf6= - 材质包到皮肤
 set lvlmsg01=      1.导入，2.导出
 set lvlmsg02=      3.显示地图列表同时导出
 set lvlmsg03=  请把地图拖入此处，然后按下回车...
@@ -81,10 +100,6 @@ set txtrmsg04=      请把要转换的材质包拖到本窗口
 set txtrmsg05=      然后按下回车.
 set txtrmsg06=      材质包转换完成了~
 set txtrmsg07=      就是转换成2.0文件结构的材质包~
-set upmsg01=   新的SM4J工具箱版本可用
-set upmsg02=   新的版本：
-set upmsg03=   按下任意键前往更新。
-set upmsg00=   检查更新...
 set evmsg01=      请输入要下载的活动关卡编号：
 set evmsg02= D - 下一页  U - 上一页
 set evmsg03= 在下载的活动关卡中发现了自定义音乐。
@@ -171,16 +186,28 @@ set txtrmsg04=      Please drag the texture pack you want to convert to here
 set txtrmsg05=      Then press Enter!
 set txtrmsg06=      The texture pack conversion is complete.
 set txtrmsg07=      is the texture pack converted for SM4J2.0~
-set upmsg01=   New 4JTools version available
-set upmsg02=   New version:
-set upmsg03=   Press any key to update.
-set upmsg00=   Checking Update...
 set evmsg01=      Please enter the number of level to be downloaded:
 set evmsg02= D - Page Down  U - Page Up
 set evmsg03= Custom music was found in the downloaded level.
 set evmsg04= Load this music will overwrite your current custom music.
 set evmsg05= Any key to continue...
 set evmsg06=      Download Complete
+set msg216=   6.[Texture to Skin]
+set msg217=   Convert characters in textures to 2.0.4 skins.
+set txtrmsg11=      Please drag the texture pack to this window,
+set txtrmsg12=      then press Enter.
+set txtrmsg13=      This will convert the characters in the texture pack
+set txtrmsg14=      to a skin that can be used in 2.0.4...
+set txtrmsg15=    Which player do you want to convert to a skin?
+set txtrmsg16=    (1~4)
+set txtrmsg17=    Please enter the converted skin name,
+set txtrmsg18=    then press Enter.
+set txtrmsg19=    Converting...
+set txtrmsg20=   Conversion complete!
+set txtrmsg21=   Folder
+set txtrmsg22= is the converted skin.
+set txtrmsg23=   Plz put this skin into the SM4J data folder manually!
+set txtrmsg24=   Any key to exit...
 goto mainmenu2
 
 :lang3
@@ -261,29 +288,40 @@ set txtrmsg04=      Arrastre el paquete de texturas al que desea convertir aqui
 set txtrmsg05=      luego presione Enter!
 set txtrmsg06=      La conversion del paquete de texturas esta completa.
 set txtrmsg07=      es el paquete de texturas convertido para SM4J2.0~
-set upmsg01=   Nueva version de 4JTools disponible
-set upmsg02=   Nueva version:
-set upmsg03=   Presione cualquier tecla para actualizar.
-set upmsg00=   Comprobando actualizacion...
 set evmsg01=      Ingrese el numero de nivel a descargar:
 set evmsg02= D - Pagina siguiente  U - Pagina anterior
 set evmsg03= Se encontro musica personalizada en el nivel descargado.
 set evmsg04= Cargar esta musica sobrescribira su musica personalizada actual.
 set evmsg05= Pulse cualquier tecla para continuar...
 set evmsg06=      Descargar completo
+set msg216=   6.[Textura a la piel]
+set msg217=   Convierta caracteres en texturas a pieles 2.0.4.
+set txtrmsg11=      Arrastre el paquete de texturas a esta ventana,
+set txtrmsg12=      luego presione Enter.
+set txtrmsg13=      Esto convertira los caracteres en el paquete de texturas
+set txtrmsg14=      en una mascara que se puede usar en 2.0.4 ...
+set txtrmsg15=    Que jugador quieres convertir en skin?
+set txtrmsg16=    (1~4)
+set txtrmsg17=    Ingrese el nombre de la mascara convertido,
+set txtrmsg18=    luego presione Enter.
+set txtrmsg19=    Mudado...
+set txtrmsg20=   Conversion completa!
+set txtrmsg21=   La carpeta
+set txtrmsg22= es la máscara convertida.
+set txtrmsg23=   Ponga esta mascara en la carpeta de datos SM4J manualmente!
+set txtrmsg24=   Cualquier tecla para salir ...
 goto mainmenu2
 
 :mainmenu2
+if exist "%UserProfile%\AppData\Roaming\SM4JLegacy" (set SM4JDirName=SM4JLegacy& set gameversion=2.0.4) else (set SM4JDirName=Super_Mario_4_Jugadores& set gameversion=2.0.3)
 mode con cols=%cols% lines=%lines%
-set /a lines2=%lines%+10
+if "%gameversion%"=="2.0.4" (set /a lines2=%lines%+12) else (set /a lines2=%lines%+10)
 title %msgtitle%%msgf0%
-set SM4JDirName=Super_Mario_4_Jugadores& set gameversion=2.0.3
-if exist "%UserProfile%\AppData\Roaming\SM4JLegacy" set SM4JDirName=SM4JLegacy& set gameversion=2.0.4
 mode con cols=%cols% lines=%lines2%
 cls
 echo.&echo.%msg01%%msgf0%%msg016%
 echo.&echo.%msg201%&echo.
-echo.%msg202%&echo.%msg203%&echo.%msg204%&echo.%msg205%&echo.%msg207%&echo.%msg208%&echo.%msg211%&echo.%msg212%&echo.%msg213%&echo.%msg214%
+if "%gameversion%"=="2.0.4" (echo.%msg202%&echo.%msg203%&echo.%msg204%&echo.%msg205%&echo.%msg207%&echo.%msg208%&echo.%msg211%&echo.%msg212%&echo.%msg213%&echo.%msg214%&echo.%msg216%&echo.%msg217%) else (echo.%msg202%&echo.%msg203%&echo.%msg204%&echo.%msg205%&echo.%msg207%&echo.%msg208%&echo.%msg211%&echo.%msg212%&echo.%msg213%&echo.%msg214%)
 echo.&echo.%msg210%
 echo.%msgline%&echo.%msg209%
 echo.&echo.%msg02%
@@ -295,8 +333,9 @@ if /i "%choice%"=="2" goto txtrconverter
 if /i "%choice%"=="3" goto eventdl
 if /i "%choice%"=="4" goto levelmgr
 if /i "%choice%"=="5" goto olupd
+if /i "%choice%"=="6" goto txtrtoskin
 if /i "%choice%"=="G" start "" "https://github.com/YidaozhanYa/4J_Tools" & goto mainmenu
-echo.%msgerr% & ping -n 2 127.1>nul & goto mainmenu
+echo.%msgerr% & ping -n 2 127.1>nul & goto mainmenu2
 
 
 
@@ -3180,8 +3219,6 @@ endlocal & exit
 title %msgtitle%%msgf2%
 set /a cols2=cols+6
 mode con cols=%cols2% lines=%lines%
-rd /s /q "%~dp0txtr_workingdir"
-del /s /q "%~dp0txtr_workingdir\*"
 if exist "%UserProfile%\AppData\Roaming\%SM4JDirName%" set mapdi1="%UserProfile%\AppData\Roaming\%SM4JDirName%\Niveles"& goto maint
 if exist "%UserProfile%\Application Data\Roaming\%SM4JDirName%" set mapdi1="%UserProfile%\Application Data\Roaming\%SM4JDirName%\Niveles"& goto maint
 if exist "%UserProfile%\%SM4JDirName%" set mapdi1="%UserProfile%\%SM4JDirName%\Niveles"& goto maint
@@ -3403,7 +3440,6 @@ endlocal
 exit
 
 :eventdl
-
 cls
 title %msgtitle%%msgf4%
 set /a lines2=%lines%+15
@@ -3525,6 +3561,424 @@ echo.%msg015%%msgf4%%msg016%
 echo.%msg02%
 echo.&echo.%evmsg06%^^!
 echo.%lvlmsg06%^^! & echo.%msg16%
+pause>nul
+endlocal
+exit
+
+:txtrtoskin
+cls
+title %msgtitle%%msgf6%
+set /a cols2=cols+6
+mode con cols=%cols2% lines=%lines%
+echo.&echo.     %msg015%%msgf6%%msg016%
+echo.&echo.%txtrmsg11%&echo.%txtrmsg12%&echo.%txtrmsg13%&echo.%txtrmsg14%
+set /p confile=
+:plr_enter
+cls
+echo.&echo.     %msg015%%msgf6%%msg016%
+echo.&echo.%txtrmsg15%&echo.%txtrmsg16%
+set /p player_num=
+if /i "%player_num%"=="1" set player_num=P1& goto plr_enter2
+if /i "%player_num%"=="2" set player_num=P2& goto plr_enter2
+if /i "%player_num%"=="3" set player_num=P3& goto plr_enter2
+if /i "%player_num%"=="4" set player_num=P4& goto plr_enter2
+echo.%msgerr% & ping -n 2 127.1>nul & goto plr_enter
+:plr_enter2
+cls
+echo.&echo.     %msg015%%msgf6%%msg016%
+echo.&echo.%txtrmsg17%&echo.%txtrmsg18%
+set /p skin_name=
+cls
+echo.&echo.     %msg015%%msgf6%%msg016%
+echo.&echo.  %txtrmsg19%
+md txtr_workingdir
+set workdir="%~dp0txtr_workingdir"
+md txtr_workingdir\pack_orig
+copy %confile% txtr_workingdir\pack_orig
+md txtr_workingdir\output
+7za  x -y -aos -o%workdir%\output  %confile%
+cls
+cd "%workdir%\"
+if /i "%player_num%"=="P1" move /y output\mario_Custom %skin_name%
+move /y output\mario%player_num%_Custom %skin_name%
+if /i "%player_num%" neq "P1" set str1=mario%player_num%
+cd "%workdir%\%skin_name%"
+ren "spr_marioboo%player_num%.png" "spr_marioboo.png"
+ren "spr_mario%player_num%_pull_strip18.png" "spr_mario_pull.png"
+ren "spr_inshell_strip4.png" "spr_inshell.png"
+ren "spr_mario%player_num%_dead.png" "spr_mario_dead.png"
+ren "spr_mario_pull_strip18.png" "spr_mario_pull.png"
+ren "spr_mario_pull_strip28.png" "spr_mario_pull.png"
+
+cd "%workdir%\%skin_name%\Bee"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Big"
+if exist "spr_mario_big_warp_strip4.png" (
+   if exist "spr_mario%player_num%_big_warp_strip4.png" (del /q "spr_mario_big_warp_strip4.png")
+)
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Bomb"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Boomerang"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Cape"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip3=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip5=!")
+
+cd "%workdir%\%skin_name%\Carrot"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Cat"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip3=!")
+
+cd "%workdir%\%skin_name%\Cloud"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Crown"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Fire"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Frog"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Hammer"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Ice"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Karate"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+ren "spr_mario_karate_melee_strip6.png" "spr_mario_karate_melee.png"
+
+cd "%workdir%\%skin_name%\Leaf"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip5=!")
+
+cd "%workdir%\%skin_name%\Lightning"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Link"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip3=!")
+
+cd "%workdir%\%skin_name%\Ninja"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Penguin"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Propeller"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Pyre"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Rock"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+ren "spr_mario_rock_roll_strip7.png" "spr_mario_rock_roll.png"
+
+cd "%workdir%\%skin_name%\Small"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Shell"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Super"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Squirrel"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Swooper"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Walljump"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+
+cd "%workdir%\%skin_name%\Tanooki"
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:%str1%=mario!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip2=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip4=!")
+for /f "delims=" %%a in ('dir /a /b *') do (
+set str2=%%a
+ren "%%~a" "!str2:_strip5=!")
+
+cd "%workdir%\output\"
+echo [info]>info.ini
+for /f "tokens=1,* delims=:-" %%a in ('findstr /n .* texture.ini') do (
+   if "%%a"=="3" echo %%b>>info.ini
+)
+cd "%workdir%\"
+copy output\info.ini %skin_name%\info.ini
+for /f "delims=" %%i in ('dir /s/b pack_orig\*.*') do (
+   set "foo=%%~nxi"
+   set foo=!foo: =_!
+   set foo=!foo: =_!
+   ren "%%~fi" "!foo!"
+)
+cd "%workdir%\%skin_name%\"
+copy big\spr_mario_big_runjump.png SkinPreview.png
+rd /s /q WorldMap
+echo.This skin was converted from %player_num% of '%foo%' texture pack using 4JTools.>README.md
+echo.Repo link:'https://github.com/YidaozhanYa/4J_Tools'>>README.md
+echo.>.nomedia
+cd "%~dp0"
+xcopy /e /i /y "%~dp0txtr_workingdir\%skin_name%" "%~dp0\%skin_name%"
+rd /s /q txtr_workingdir
+cls
+echo.&echo.     %msg015%%msgf6%%msg016%
+echo.&echo.%txtrmsg20%
+echo.&echo.%txtrmsg21%%skin_name%%txtrmsg22%
+echo.%txtrmsg23%&echo.%txtrmsg24%
 pause>nul
 endlocal
 exit

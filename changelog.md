@@ -32,6 +32,14 @@ V3.7
 
 - Se agrego soporte para la version 2.0.4.
 
+V3.9
+
+- Para evitar algunos errores, reemplace la versión exe convertida con el archivo por lotes original.
+
+- El actualizador automatico se ha eliminado, actualice en Github en el futuro.
+
+- Anadido la herramienta "Paquete de texturas a piel", puede convertir facilmente un paquete de texturas en una piel que se puede utilizar en 2.0.4.
+
 ------
 
 #### <span id="EN">EN</span>
@@ -63,6 +71,14 @@ V3.7
 
 - Added support for version 2.0.4.
 
+V3.9
+
+- To avoid some bugs, I replaced converted exe version with original batch file.
+
+- The automatic updater has been deleted, please update on Github in the future.
+
+- Added the "Texture Pack to Skin" tool, you can easily convert a texture pack into a skin that can be used in 2.0.4.
+
 ------
 
 #### <span id="CN">CN</span>
@@ -92,3 +108,11 @@ V3.6
 V3.7
 
 - 适配了2.0.4。
+
+V3.9
+
+- 为了避免一些bug，将转换为exe的版本替换为原批处理文件。
+
+- 删除了自动更新系统，以后请在Github上更新。
+
+- 添加了“材质包转皮肤”功能，您可以轻松地将一个材质包转换为可用于2.0.4的皮肤。
