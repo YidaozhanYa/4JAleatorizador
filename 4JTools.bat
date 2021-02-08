@@ -1,36 +1,3 @@
-::[Bat To Exe Converter]
-::
-::YAwzoRdxOk+EWAjk
-::fBw5plQjdCmDJHSF5ks/aDxVQQG+taJ2j1LwbS0+u+C7q04SWqw2e4C7
-::YAwzuBVtJxjWCl3EqQJgSA==
-::ZR4luwNxJguZRRnk
-::Yhs/ulQjdF+5
-::cxAkpRVqdFKZSjk=
-::cBs/ulQjdF+5
-::ZR41oxFsdFKZSDk=
-::eBoioBt6dFKZSDk=
-::cRo6pxp7LAbNWATEpCI=
-::egkzugNsPRvcWATEpCI=
-::dAsiuh18IRvcCxnZtBJQ
-::cRYluBh/LU+EWAnk
-::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZk0aHErSXA==
-::ZQ05rAF9IBncCkqN+0xwdVsHAlLMbCXqZg==
-::ZQ05rAF9IAHYFVzEqQJkAi9bQwiRaj/a
-::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
-::fBEirQZwNQPfEVWB+kM9LVsJDFCoCGS1CqZ8
-::cRolqwZ3JBvQF1fEqQJQ
-::dhA7uBVwLU+EWGCN8EM/MhNVQju7PQs=
-::YQ03rBFzNR3SWATElA==
-::dhAmsQZ3MwfNWATElA==
-::ZQ0/vhVqMQ3MEVWAtB9wSA==
-::Zg8zqx1/OA3MEVWAtB9wSA==
-::dhA7pRFwIByZRRnk
-::Zh4grVQjdCmDJHSF5ks/aDxVQQG+aEGFMroT5PvH7eOJnhk3YO0wdJyNjvqLOOVz
-::YB416Ek+ZG8=
-::
-::
-::978f952a14a936cc963da21a135fa983
 @echo off
 color f0
 setlocal enabledelayedexpansion
@@ -124,7 +91,7 @@ set evmsg03= 在下载的活动关卡中发现了自定义音乐。
 set evmsg04= 加载这个自定义音乐会覆盖你目前的自定义音乐。
 set evmsg05= 任意键继续...
 set evmsg06=      下载完成
-goto mainmenu
+goto mainmenu2
 
 :lang2
 chcp 437>nul 2>nul||goto lang3
@@ -214,7 +181,7 @@ set evmsg03= Custom music was found in the downloaded level.
 set evmsg04= Load this music will overwrite your current custom music.
 set evmsg05= Any key to continue...
 set evmsg06=      Download Complete
-goto mainmenu
+goto mainmenu2
 
 :lang3
 set cols=75
@@ -304,43 +271,12 @@ set evmsg03= Se encontro musica personalizada en el nivel descargado.
 set evmsg04= Cargar esta musica sobrescribira su musica personalizada actual.
 set evmsg05= Pulse cualquier tecla para continuar...
 set evmsg06=      Descargar completo
-goto mainmenu
-
-:checkupd
-echo.%upmsg00%
-del "%~dp0cfg\version.md"
-wget -q -P "%cd%/cfg" "https://sp.sydzy.workers.dev/https/raw.githubusercontent.com/YidaozhanYa/4J_Tools/main/cfg/version.md"
-echo.%date:~8,2%>cfg\updcheck.cfg
-del "%~dp0.wget-hsts"
-set /p ghver=<cfg/version.md
-if /i "%ghver%" neq "%msgver%" goto autoupdcheck
 goto mainmenu2
-:autoupdcheck
-cls
-title %msgtitle%
-echo.&echo.%msg01%%msg016%
-echo.&echo.%upmsg01%^^!
-echo.%upmsg02%%ghver%
-echo.%upmsg03%
-pause>nul
-start "" "https://github.com/YidaozhanYa/4J_Tools/releases/tag/%ghver%"
-endlocal
-exit
 
-:mainmenu
+:mainmenu2
 mode con cols=%cols% lines=%lines%
 set /a lines2=%lines%+10
 title %msgtitle%%msgf0%
-set /p datec1=<cfg/updcheck.cfg
-set datec2=%date:~8,2%
-set /a datec3=%datec2%-%datec1%
-echo.%datec3%
-if %datec3% geq 20 (goto checkupd)
-if %datec3% lss -10 (goto lss10)
-goto mainmenu2
-:lss10
-if %datec3% geq -31 (goto checkupd)
-:mainmenu2
 set SM4JDirName=Super_Mario_4_Jugadores& set gameversion=2.0.3
 if exist "%UserProfile%\AppData\Roaming\SM4JLegacy" set SM4JDirName=SM4JLegacy& set gameversion=2.0.4
 mode con cols=%cols% lines=%lines2%
