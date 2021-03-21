@@ -7,7 +7,7 @@ rd /s /q "%~dp0txtr_workingdir"
 del /s /q "%~dp0txtr_workingdir\*"
 
 set genmsg05=HTTPS://GITHUB.COM/YIDAOZHANYA/4JTOOLS
-set msgver=V3.8
+set msgver=V4
 :lang
 chcp 936>nul 2>nul||goto lang2
 set cols=50
@@ -106,6 +106,29 @@ set evmsg03= 在下载的活动关卡中发现了自定义音乐。
 set evmsg04= 加载这个自定义音乐会覆盖你目前的自定义音乐。
 set evmsg05= 任意键继续...
 set evmsg06=      下载完成
+set msg218=   7.[下载游戏]
+set msg219=   下载 SM4J 游戏。
+set msgf7= - 下载游戏
+set gmsg01=     输入要下载的SM4J版本编号，然后按回车。
+set gmsg11=    1. SM4J 原版 2.0.5Fix
+set gmsg12=    2. SM4J 原版 2.0.5Fix 高清音频
+set gmsg13=    3. SM4J 原版 2.0.3 英化版
+set gmsg14=    4. SM4J 原版 2.0.4
+set gmsg15=    5. SM4J 原版 2.0.3
+set gmsg16=    6. SM4J 原版 2.0.3 修复社区关卡
+set gmsg17=    7. SM4J 在线对战 1.0.1
+set gmsg18=    8. SM4J 原版 2.0.3 汉化版
+set gmsg02=     输入要使用的下载源编号，然后按回车。
+set gmsg21=    1. 国内源（蓝奏云）【推荐】
+set gmsg22=    2. 国外源（CloudFlare / 官方)
+set gmsg23=     备注：当要下载的资源国内源没有时，将使用国外源。
+set gmsg31=     正在下载...
+set gmsg32=     P.S. 检测到国内源中没有当前资源，
+set gmsg33=     将使用国外源下载...
+set gmsg34=     P.S. 检测到国外源中没有当前资源，
+set gmsg35=     将使用国内源下载...
+set gmsg36=     下载完成
+set gmsg37=     任意键退出...
 goto mainmenu2
 
 :lang2
@@ -208,6 +231,30 @@ set txtrmsg21=   Folder
 set txtrmsg22= is the converted skin.
 set txtrmsg23=   Plz put this skin into the SM4J data folder manually!
 set txtrmsg24=   Any key to exit...
+set msg218=   7.[Download Game]
+set msg219=   Download SM4J game.
+set msgf7= - Download Game
+set gmsg01=   Enter the SM4J number you wanna download then press Enter.
+set gmsg11=    1. SM4J Legacy 2.0.5Fix
+set gmsg12=    2. SM4J Legacy 2.0.5Fix HD Audio Mod
+set gmsg13=    3. SM4J 2.0.3 English Mod
+set gmsg14=    4. SM4J Legacy 2.0.4
+set gmsg15=    5. SM4J 2.0.3
+set gmsg16=    6. SM4J 2.0.3 Fixed CommunityLevels Mod
+set gmsg17=    7. SM4J Online Battle 1.0.1
+set gmsg18=    8. SM4J 2.0.3 Chinese Mod
+set gmsg02=   Enter the download source number you wanna use then press Enter.
+set gmsg21=    1. Chinese Source (Lanzou Netdisk)
+set gmsg22=    2. International Source (CloudFlare / Official) [recommend]
+set gmsg23=   Note:When the file isn't available in Chinese source, the International source will be used.
+set gmsg31=   Now Downloading...
+set gmsg32=   P.S. There are no current file in Chinese Source,
+set gmsg33=   Now redirecting to International Source...
+set gmsg34=   P.S. There are no current file in International Source,
+set gmsg35=   Now redirecting to Chinese Source...
+set gmsg36=   Download Complete
+set gmsg37=   Any key to exit...
+goto mainmenu2
 goto mainmenu2
 
 :lang3
@@ -310,6 +357,29 @@ set txtrmsg21=   La carpeta
 set txtrmsg22= es la máscara convertida.
 set txtrmsg23=   Ponga esta mascara en la carpeta de datos SM4J manualmente!
 set txtrmsg24=   Cualquier tecla para salir ...
+set msg218=   7.[Descargate el juego]
+set msg219=   Descarga el juego SM4J.
+set msgf7= - Descarga SM4J
+set gmsg01=   Ingrese el numero SM4J que desea descargar y luego presione Enter.
+set gmsg11=    1. SM4J Legacy 2.0.5Fix
+set gmsg12=    2. SM4J Legacy 2.0.5Fix HD Audio Mod
+set gmsg13=    3. SM4J 2.0.3 Ingles Mod
+set gmsg14=    4. SM4J Legacy 2.0.4
+set gmsg15=    5. SM4J 2.0.3
+set gmsg16=    6. SM4J 2.0.3 Mod de niveles comunitarios fijos
+set gmsg17=    7. SM4J Batalla En Linea 1.0.1
+set gmsg18=    8. SM4J 2.0.3 Chino Mod
+set gmsg02=   Ingrese el numero de la fuente de descarga que desea usar y luego presione Enter.
+set gmsg21=    1. Fuente china (Lanzou Unidad neta)
+set gmsg22=    2. Fuente internacional (CloudFlare / Oficial) [recomendar]
+set gmsg23=   Nota: Cuando el archivo no este disponible en fuente china, se utilizara la fuente internacional.
+set gmsg31=   Descargando ahora...
+set gmsg32=   PD No hay un archivo actual en fuente china,
+set gmsg33=   Ahora redirigiendo a Fuente internacional ...
+set gmsg34=   PD No hay un archivo actual en fuente internacional,
+set gmsg35=   Ahora redirigiendo a Fuente china ...
+set gmsg36=   Descargar completo
+set gmsg37=   Cualquier tecla para salir...
 goto mainmenu2
 
 :mainmenu2
@@ -321,7 +391,7 @@ mode con cols=%cols% lines=%lines2%
 cls
 echo.&echo.%msg01%%msgf0%%msg016%
 echo.&echo.%msg201%&echo.
-if "%gameversion%"=="2.0.4" (echo.%msg202%&echo.%msg203%&echo.%msg204%&echo.%msg205%&echo.%msg207%&echo.%msg208%&echo.%msg211%&echo.%msg212%&echo.%msg213%&echo.%msg214%&echo.%msg216%&echo.%msg217%) else (echo.%msg202%&echo.%msg203%&echo.%msg204%&echo.%msg205%&echo.%msg207%&echo.%msg208%&echo.%msg211%&echo.%msg212%&echo.%msg213%&echo.%msg214%)
+echo.%msg202%&echo.%msg203%&echo.%msg204%&echo.%msg205%&echo.%msg207%&echo.%msg208%&echo.%msg211%&echo.%msg212%&echo.%msg213%&echo.%msg214%&echo.%msg216%&echo.%msg217%&echo.%msg218%&echo.%msg219%
 echo.&echo.%msg210%
 echo.%msgline%&echo.%msg209%
 echo.&echo.%msg02%
@@ -334,6 +404,7 @@ if /i "%choice%"=="3" goto eventdl
 if /i "%choice%"=="4" goto levelmgr
 if /i "%choice%"=="5" goto olupd
 if /i "%choice%"=="6" goto txtrtoskin
+if /i "%choice%"=="7" goto gamedl
 if /i "%choice%"=="G" start "" "https://github.com/YidaozhanYa/4J_Tools" & goto mainmenu
 echo.%msgerr% & ping -n 2 127.1>nul & goto mainmenu2
 
@@ -3476,10 +3547,10 @@ echo.%msgline%
 echo.%evmsg02%
 set /p choice=
 if /i "%choice%"=="1" set dlurl="https://sp.sydzy.workers.dev/https/www.dropbox.com/s/j0ioor4lfkumy24/Bosque%20Peculiar.zip?dl=1"
-if /i "%choice%"=="2" set dlurl="https://sydzy.ga/4J_Tools/Captain_Toad_Event.zip"
-if /i "%choice%"=="3" set dlurl="https://sydzy.ga/4J_Tools/Flip_blocks_on_Ice.zip"
-if /i "%choice%"=="4" set dlurl="https://sydzy.ga/4J_Tools/mixed_adventure.zip"
-if /i "%choice%"=="5" set dlurl="https://sydzy.ga/4J_Tools/bowserforest.zip"
+if /i "%choice%"=="2" set dlurl="https://yidaozhan.gq/4J_Tools/Captain_Toad_Event.zip"
+if /i "%choice%"=="3" set dlurl="https://yidaozhan.gq/4J_Tools/Flip_blocks_on_Ice.zip"
+if /i "%choice%"=="4" set dlurl="https://yidaozhan.gq/4J_Tools/mixed_adventure.zip"
+if /i "%choice%"=="5" set dlurl="https://yidaozhan.gq/4J_Tools/bowserforest.zip"
 if /i "%choice%"=="6" set dlurl="https://sp.sydzy.workers.dev/https/www.dropbox.com/s/kl5gfxx47x6l9vo/6.zip?dl=1"
 if /i "%choice%"=="7" set dlurl="https://sp.sydzy.workers.dev/https/www.dropbox.com/s/dqe1byswj7ky7tu/7.zip?dl=1"
 if /i "%choice%"=="8" set dlurl="https://sp.sydzy.workers.dev/https/www.dropbox.com/s/fnsuz66bx5x7kv3/8.zip?dl=1"
@@ -3982,3 +4053,64 @@ echo.%txtrmsg23%&echo.%txtrmsg24%
 pause>nul
 endlocal
 exit
+
+:gamedl
+cls
+title %msgtitle%%msgf7%
+set /a lines2=%lines%+15
+set /a cols2=cols+6
+mode con cols=%cols2% lines=%lines2%
+echo.&echo.%msg01%%msgf7%%msg016%
+echo.          
+echo.%msg02%
+echo.&echo.%gmsg01%
+echo.&echo.%msgline%&echo.
+echo.%gmsg11%&echo.%gmsg12%&echo.%gmsg13%&echo.%gmsg14%&echo.%gmsg15%&echo.%gmsg16%&echo.%gmsg17%&echo.%gmsg18%
+echo.&echo.%msgline%&echo.
+set /p gversion=
+cls
+echo.&echo.%msg01%%msgf7%%msg016%
+echo.          
+echo.%msg02%
+echo.&echo.%gmsg02%
+echo.&echo.%msgline%&echo.
+echo.%gmsg21%&echo.%gmsg22%
+echo.&echo.%msgline%&echo.&echo.%gmsg23%
+set /p source=
+set gversion=%source%%gversion%
+if /i "%gversion%"=="11" set dlurl="http://lzy-api.herokuapp.com/?url=https://sydzy.lanzous.com/iwTyKli3wti&type=down" & set sourceavaliable=1& set sourcename=%gmsg11%.zip
+if /i "%gversion%"=="12" set dlurl="https://pan2.yidaozhan.gq/0:down/SM4J=HD/SM4J2.0.5Fix PC Patched.zip" & set sourceavaliable=0& set sourcename=%gmsg12%.zip
+if /i "%gversion%"=="13" set dlurl="http://lzy-api.herokuapp.com/?url=https://sydzy.lanzous.com/i5uuPk9y5ve&type=down" & set sourceavaliable=1& set sourcename=%gmsg13%.7z
+if /i "%gversion%"=="14" set dlurl="http://lzy-api.herokuapp.com/?url=https://sydzy.lanzous.com/ipDugldcyni&type=down" & set sourceavaliable=1& set sourcename=%gmsg14%.zip
+if /i "%gversion%"=="15" set dlurl="http://lzy-api.herokuapp.com/?url=https://sydzy.lanzous.com/i7BW9hthr2h&type=down" & set sourceavaliable=1& set sourcename=%gmsg15%.zip
+if /i "%gversion%"=="16" set dlurl="http://lzy-api.herokuapp.com/?url=https://sydzy.lanzous.com/iUF9jjbe10f&type=down" & set sourceavaliable=1& set sourcename=%gmsg16%.zip
+if /i "%gversion%"=="17" set dlurl="http://lzy-api.herokuapp.com/?url=https://sydzy.lanzous.com/i1kVlk9ys5g&type=down" & set sourceavaliable=1& set sourcename=%gmsg17%.zip
+if /i "%gversion%"=="18" set dlurl="http://lzy-api.herokuapp.com/?url=https://sydzy.lanzous.com/ivhxphthtob&type=down" & set sourceavaliable=1& set sourcename=%gmsg18%.7z
+if /i "%gversion%"=="21" set dlurl="https://cdn.discordapp.com/attachments/630931682924429328/808555699637846026/SM4J2.0.5Fix.zip" & set sourceavaliable=1& set sourcename=%gmsg11%.zip
+if /i "%gversion%"=="22" set dlurl="https://pan2.yidaozhan.gq/0:down/SM4J=HD/SM4J2.0.5Fix PC Patched.zip" & set sourceavaliable=1& set sourcename=%gmsg12%.zip
+if /i "%gversion%"=="23" set dlurl="https://pan2.yidaozhan.gq/0:down/SM4J=EN/cxdj_2.0.3_EN.exe" & set sourceavaliable=1& set sourcename=%gmsg13%.exe
+if /i "%gversion%"=="24" set dlurl="https://pan.yidaozhan.gq/drive1/SM4J_2.0.4.zip" & set sourceavaliable=1& set sourcename=%gmsg14%.zip
+if /i "%gversion%"=="25" set dlurl="https://archive.org/download/infoserver/cxdj_2.0.3.exe" & set sourceavaliable=1& set sourcename=%gmsg15%.exe
+if /i "%gversion%"=="26" set dlurl="http://lzy-api.herokuapp.com/?url=https://sydzy.lanzous.com/iUF9jjbe10f&type=down"& set sourceavaliable=0& set sourcename=%gmsg16%.zip
+if /i "%gversion%"=="27" set dlurl="https://archive.org/download/infoserver/SM4J Online Battle 1.0.1.zip" & set sourceavaliable=1& set sourcename=%gmsg17%.zip
+if /i "%gversion%"=="28" set dlurl="http://lzy-api.herokuapp.com/?url=https://sydzy.lanzous.com/ivhxphthtob&type=down" & set sourceavaliable=0& set sourcename=%gmsg18%.7z
+set sourceavaliable=%sourceavaliable%%source%
+set "sourcename=%sourcename: =%"
+cls
+echo.&echo.%msg01%%msgf7%%msg016%
+echo.          
+echo.%msg02%
+echo.&echo.%gmsg02%
+echo.&echo.%msgline%&echo.
+echo.%gmsg31% %sourcename%&echo.
+if /i "%sourceavaliable%"=="01" echo.%gmsg32%&echo.%gmsg33%
+if /i "%sourceavaliable%"=="02" echo.%gmsg34%&echo.%gmsg35%
+wget --max-redirect 20 --progress=bar:force -O %sourcename% %dlurl%
+cls
+echo.&echo.%msg01%%msgf7%%msg016%
+echo.          
+echo.%msg02%
+echo.&echo.%gmsg02%
+echo.&echo.%msgline%&echo.
+echo.%gmsg36%^^!&echo.%gmsg37%
+pause>nul
