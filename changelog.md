@@ -6,6 +6,10 @@
 
 #### ES
 
+V4.1
+
+- Se corrigio el error de varios idiomas, ahora puede seleccionar el idioma cuando se inicia por primera vez. 3 = Espanol.
+
 V4.0
 
 - Ahora puedes descargar juegos SM4J en la herramienta.
@@ -45,6 +49,10 @@ V3.0
 ------
 
 #### <span id="EN">EN</span>
+
+V4.1
+
+- Fixed multilanguage error, now you can select language when first launch. 2 = English.
 
 V4.0
 
@@ -87,6 +95,10 @@ V3.0
 ------
 
 #### <span id="CN">CN</span>
+
+V4.1
+
+- 修复了多语言功能，现在你可以在第一次启动时选择语言。1 = 中文。
 
 V4.0
 

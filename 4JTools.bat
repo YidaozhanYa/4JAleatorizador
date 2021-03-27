@@ -5,11 +5,32 @@ cd "%~dp0"
 pushd "%cd%"
 rd /s /q "%~dp0txtr_workingdir"
 del /s /q "%~dp0txtr_workingdir\*"
-
 set genmsg05=HTTPS://GITHUB.COM/YIDAOZHANYA/4JTOOLS
-set msgver=V4
+set msgver=V4.1
+
+:initialization
+set cols=50
+set lines=15
+if exist "%~dp0cfg\language.Chinese.cfg" goto lang
+if exist "%~dp0cfg\language.English.cfg" goto lang2
+if exist "%~dp0cfg\language.Spanish.cfg" goto lang3
+cls
+title 4JTools %msgver% - initialization
+echo.
+echo.      Please select your language then press Enter...
+echo.      请选择你的语言然后按下回车...
+echo.      Seleccione su idioma y luego presione Enter ...
+echo.
+echo.      1 = 简体中文
+echo.      2 = English
+echo.      3 = Espanol
+set /p a=
+if /i "%a%"=="1" echo.set>"%~dp0cfg\language.Chinese.cfg" & goto initialization
+if /i "%a%"=="2" echo.set>"%~dp0cfg\language.English.cfg" & goto initialization
+if /i "%a%"=="3" echo.set>"%~dp0cfg\language.Spanish.cfg" & goto initialization
+
+pause
 :lang
-chcp 936>nul 2>nul||goto lang2
 set cols=50
 set lines=15
 set msgtitle=SM4J - 工具箱 %msgver%
@@ -132,7 +153,6 @@ set gmsg37=     任意键退出...
 goto mainmenu2
 
 :lang2
-chcp 437>nul 2>nul||goto lang3
 set cols=70
 set lines=15
 set lang=1
@@ -254,7 +274,6 @@ set gmsg34=   P.S. There are no current file in International Source,
 set gmsg35=   Now redirecting to Chinese Source...
 set gmsg36=   Download Complete
 set gmsg37=   Any key to exit...
-goto mainmenu2
 goto mainmenu2
 
 :lang3
